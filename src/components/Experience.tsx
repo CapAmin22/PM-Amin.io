@@ -1,18 +1,18 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Award } from "lucide-react";
+import { Briefcase, Award, GraduationCap } from "lucide-react";
 
 type ExperienceItemProps = {
   date: string;
   company: string;
+  location: string;
   title: string;
-  description: string;
-  achievements: string[];
+  description: string[];
   delay: number;
 };
 
-const ExperienceItem = ({ date, company, title, description, achievements, delay }: ExperienceItemProps) => (
+const ExperienceItem = ({ date, company, location, title, description, delay }: ExperienceItemProps) => (
   <motion.div
     className="relative pl-8 pb-12 border-l border-gray-200 last:border-0 last:pb-0"
     initial={{ opacity: 0, y: 20 }}
@@ -26,11 +26,10 @@ const ExperienceItem = ({ date, company, title, description, achievements, delay
     
     <div className="mb-1 text-sm font-medium text-fintech-blue">{date}</div>
     <h3 className="text-xl font-bold text-fintech-dark mb-1">{title}</h3>
-    <div className="text-fintech-gray mb-3">{company}</div>
-    <p className="text-fintech-gray mb-4">{description}</p>
+    <div className="text-fintech-gray mb-3">{company} • {location}</div>
     
     <div className="space-y-2">
-      {achievements.map((achievement, index) => (
+      {description.map((achievement, index) => (
         <div key={index} className="flex items-start gap-2">
           <div className="w-5 h-5 mt-0.5 rounded-full bg-fintech-blue/10 flex items-center justify-center flex-shrink-0">
             <div className="w-2 h-2 rounded-full bg-fintech-blue"></div>
@@ -45,79 +44,79 @@ const ExperienceItem = ({ date, company, title, description, achievements, delay
 const Experience = () => {
   const experiences = [
     {
-      date: "2020 - Present",
-      company: "TechFin Solutions",
-      title: "Senior Product Manager",
-      description: "Leading product strategy and development for a suite of financial technology products serving over 200,000 users and processing more than $50M in monthly transactions.",
-      achievements: [
-        "Led the development and launch of a next-generation payment platform that increased transaction volume by 46%",
-        "Implemented a user research program that improved customer satisfaction scores by 32 points",
-        "Coordinated with engineering, design, and compliance teams to deliver regulatory-compliant financial products",
-        "Managed a product team of 5 and collaborated with cross-functional teams of 25+ members"
+      date: "10/2021 - Present",
+      company: "223Poultry",
+      location: "Bangalore, India",
+      title: "Founder",
+      description: [
+        "Strategic leadership for initiatives focusing on Agribusiness Assistance.",
+        "Training and Education, Networking for Sustainability.",
+        "Industry News and Information Sharing, Digital Collaborations."
       ]
     },
     {
-      date: "2018 - 2020",
-      company: "FinTech Innovations Inc.",
-      title: "Product Manager",
-      description: "Managed the complete product lifecycle for a digital banking platform serving small to medium-sized businesses.",
-      achievements: [
-        "Redesigned onboarding flow, reducing account creation time by 68% and increasing conversion rates by 41%",
-        "Initiated and led an API strategy that expanded integration capabilities with 15+ additional financial services",
-        "Conducted competitive analysis and market research to identify new product opportunities",
-        "Developed comprehensive product roadmaps aligned with business objectives and user needs"
+      date: "05/2018 - 05/2020",
+      company: "Kotak Online New Accounts",
+      location: "Bangalore, India",
+      title: "Product Analyst Intern",
+      description: [
+        "Developed and monitored KPIs such tools like Google Analytics, Mixpanel, and Crazy Egg optimize the platforms.",
+        "Implemented strategies based on customer insights to implement more robust funnel tracking, enhancing user engagement and conversion rates."
       ]
     },
     {
-      date: "2016 - 2018",
-      company: "Global Financial Systems",
-      title: "Associate Product Manager",
-      description: "Supported the development of wealth management and investment analysis products for institutional clients.",
-      achievements: [
-        "Collaborated on the launch of a portfolio optimization tool that became the company's fastest-growing product",
-        "Created detailed user stories and acceptance criteria for development teams",
-        "Analyzed user feedback and usage data to identify improvement opportunities",
-        "Participated in agile development processes, facilitating communication between stakeholders"
+      date: "06/2020 - 04/2021",
+      company: "ThinkReduce",
+      location: "Delhi, India",
+      title: "Product Management Intern",
+      description: [
+        "Assisted in creating detailed IRP wireframes and prototypes with Figma, ensuring rapid iteration and user-centric improvements, integrating feedback and research documents.",
+        "Helped in the development of Information Repository and Document Management Systems—library documents—to enhance profile matching, sorting, filtering, and prioritization."
       ]
     },
     {
-      date: "2014 - 2016",
-      company: "Digibank Corporation",
-      title: "Business Analyst",
-      description: "Analyzed business requirements and translated them into functional specifications for financial products.",
-      achievements: [
-        "Developed comprehensive requirement specifications for mobile banking features",
-        "Conducted user acceptance testing for critical financial transactions",
-        "Created dashboard reports to track key performance indicators",
-        "Supported the migration from legacy systems to modern cloud-based solutions"
+      date: "08/2022 - 04/2023", 
+      company: "Bauzer Technologies",
+      location: "Bangalore, India",
+      title: "Associate Product Analyst",
+      description: [
+        "Worked on automated KPI tracking systems to monitor feature usage, track defects by gathering requirements, creating wireframes, client management.",
+        "Managed and executed competitive analyses of Slack, Notion, Miro, Jira and other technologies in the CMS-Content Management System."
+      ]
+    },
+    {
+      date: "08/2021 - 02/2022",
+      company: "Helpy Meta",
+      location: "Delhi, India",
+      title: "Product Integration Specialist",
+      description: [
+        "Developed and managed APIs for Helpy Meta.",
+        "Implemented features for SaaS APIs and automated API testing using Postman/Newman for business data flow and rapid feature deployment.",
+        "Integrated third-party services (Razorpay, Q-Nexus API, Streamlining) using ReactJS, improving product efficiency and scalability, enhancing developer efficiency and user experience."
       ]
     }
   ];
 
   const education = [
     {
-      date: "2012 - 2014",
-      company: "Stanford University",
-      title: "MBA, Technology Management",
-      description: "Specialized in financial technology and product innovation, with focus on digital transformation in banking.",
-      achievements: [
-        "Graduated with distinction, GPA 3.9/4.0",
-        "Research project: 'The Future of Digital Banking'",
-        "Led student fintech innovation group",
-        "Recipient of Technology Leadership Scholarship"
-      ]
+      date: "11/2023 - 04/2024",
+      company: "Savitribai Phule Pune University",
+      location: "Pune, India",
+      title: "Bachelor of Science in Computer Science",
+      description: []
+    }
+  ];
+
+  const certifications = [
+    {
+      title: "AltMBA Certification",
+      organization: "Emphasized by skills in identifying ideal customers, focusing on existing demand, providing new value, adopting strategies that match user and market needs, and designing effective customer service and measuring customer satisfaction.",
+      year: ""
     },
     {
-      date: "2008 - 2012",
-      company: "Massachusetts Institute of Technology",
-      title: "BSc, Computer Science & Economics",
-      description: "Dual major combining technical expertise with financial fundamentals.",
-      achievements: [
-        "Magna Cum Laude, GPA 3.8/4.0",
-        "Thesis: 'Algorithmic Approaches to Financial Market Analysis'",
-        "Financial Technology Club President",
-        "Internship at Goldman Sachs Technology Division"
-      ]
+      title: "Project management & Business Analysis Certification",
+      organization: "These Certifications in BA, PM, Communication, and Microsoft PowerApps provide me overall knowledge and experience in Requirement Gathering, stakeholder management, communication, requirement defining, data analysis, and design and prototyping.",
+      year: ""
     }
   ];
 
@@ -151,7 +150,7 @@ const Experience = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            A timeline of my career journey in financial technology product management, 
+            A timeline of my career journey in product management and business analysis,
             highlighting key roles and achievements.
           </motion.p>
         </div>
@@ -175,9 +174,9 @@ const Experience = () => {
                   key={index}
                   date={exp.date}
                   company={exp.company}
+                  location={exp.location}
                   title={exp.title}
                   description={exp.description}
-                  achievements={exp.achievements}
                   delay={index}
                 />
               ))}
@@ -192,7 +191,7 @@ const Experience = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Award className="text-fintech-blue" size={24} />
+              <GraduationCap className="text-fintech-blue" size={24} />
               <h3 className="text-2xl font-bold text-fintech-dark">Education</h3>
             </motion.div>
             
@@ -202,13 +201,41 @@ const Experience = () => {
                   key={index}
                   date={edu.date}
                   company={edu.company}
+                  location={edu.location}
                   title={edu.title}
                   description={edu.description}
-                  achievements={edu.achievements}
                   delay={index}
                 />
               ))}
             </div>
+            
+            <motion.div
+              className="flex items-center gap-3 mb-8 mt-12"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Award className="text-fintech-blue" size={24} />
+              <h3 className="text-2xl font-bold text-fintech-dark">Certifications</h3>
+            </motion.div>
+            
+            <motion.div
+              className="glass-card rounded-xl p-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-6">
+                {certifications.map((cert, index) => (
+                  <div key={index} className="border-b border-gray-100 last:border-b-0 pb-6 last:pb-0">
+                    <div className="font-medium text-lg text-fintech-dark mb-2">{cert.title}</div>
+                    <div className="text-sm text-fintech-gray">{cert.organization}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
             
             <motion.div
               className="glass-card rounded-xl p-6 mt-8"
@@ -217,37 +244,15 @@ const Experience = () => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold mb-4 text-fintech-dark">Certifications</h3>
-              <div className="space-y-4">
+              <h3 className="text-lg font-semibold mb-4 text-fintech-dark">Interests</h3>
+              <div className="flex flex-wrap gap-3">
                 {[
-                  {
-                    title: "Certified Scrum Product Owner (CSPO)",
-                    organization: "Scrum Alliance",
-                    year: "2019"
-                  },
-                  {
-                    title: "Product Management Certification",
-                    organization: "Product School",
-                    year: "2018"
-                  },
-                  {
-                    title: "Financial Technology Professional",
-                    organization: "FinTech Institute",
-                    year: "2017"
-                  },
-                  {
-                    title: "Data Analysis for Product Managers",
-                    organization: "Coursera",
-                    year: "2016"
-                  }
-                ].map((cert, index) => (
-                  <div key={index} className="flex justify-between items-center">
-                    <div>
-                      <div className="font-medium text-fintech-dark">{cert.title}</div>
-                      <div className="text-sm text-fintech-gray">{cert.organization}</div>
-                    </div>
-                    <div className="text-sm text-fintech-blue">{cert.year}</div>
-                  </div>
+                  "Tech/AI", "Blockchain", "Football", "Poetry",
+                  "Love Technology & AI", "Like to do Business and Entrepreneur", "like to Read Philosophy", "Crazy About History"
+                ].map((interest, index) => (
+                  <span key={index} className="px-3 py-1 bg-fintech-teal/10 text-fintech-blue rounded-full text-sm">
+                    {interest}
+                  </span>
                 ))}
               </div>
             </motion.div>

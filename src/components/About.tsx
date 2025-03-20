@@ -21,23 +21,23 @@ const About = () => {
   const strengths = [
     {
       icon: <Target size={28} />,
-      title: "Strategic Vision",
-      description: "Transforming complex financial challenges into clear product strategies that deliver measurable business outcomes."
+      title: "Product Strategy",
+      description: "Experienced in developing MVPs and using data insights to drive user-centric solutions and innovation."
     },
     {
       icon: <Lightbulb size={28} />,
-      title: "Financial Innovation",
-      description: "Pioneering new approaches to financial products that balance technological advancement with user needs."
+      title: "Ideation & Innovation",
+      description: "Passion for transforming complex problems into elegant solutions through creative thinking and user-focused approaches."
     },
     {
       icon: <Gauge size={28} />,
-      title: "Data-Driven Decisions",
-      description: "Leveraging analytics and market insights to guide product development and optimize user experiences."
+      title: "Cross-Functional Leadership",
+      description: "Proven leader skilled at uniting cross-functional teams to achieve business objectives."
     },
     {
       icon: <Users size={28} />,
-      title: "Cross-Functional Leadership",
-      description: "Coordinating between technical, design, and business teams to deliver cohesive financial solutions."
+      title: "Strategic Vision",
+      description: "Balancing business needs with technical feasibility to create product roadmaps that drive growth and innovation."
     }
   ];
 
@@ -61,7 +61,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Bridging Technology and Finance
+            Product Management | Founder | Strategy & Innovation | Ideation
           </motion.h2>
           
           <motion.p
@@ -71,10 +71,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            As a Product Manager specializing in fintech, I combine deep financial domain knowledge with 
-            technical expertise to create impactful digital financial solutions. With over 8 years of 
-            experience in the industry, I've developed a passion for simplifying complex financial 
-            processes through intuitive product design.
+            Product Management Professional also Experienced in Business Analysis, Product Development and Leadership. Expert in developing MVPs, using data insights to drive user-centric solutions and innovation. Proven leader skilled at uniting cross-functional teams to achieve business objectives.
           </motion.p>
           
           <motion.div
@@ -88,7 +85,7 @@ const About = () => {
               href="#experience"
               className="text-fintech-blue font-medium hover:text-fintech-dark transition-colors subtle-underline"
             >
-              My Background
+              My Experience
             </a>
             <a
               href="#projects"

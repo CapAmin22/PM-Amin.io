@@ -29,12 +29,12 @@ const Header = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <span className="shimmer-text">Alex Morgan</span>
+          <span className="shimmer-text">Amin Shaikh</span>
         </motion.a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {["Home", "About", "Projects", "Experience", "Contact"].map((item, i) => (
+          {["Home", "About", "Projects", "Experience", "Skills", "Contact"].map((item, i) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -67,7 +67,7 @@ const Header = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="flex flex-col space-y-4">
-            {["Home", "About", "Projects", "Experience", "Contact"].map((item) => (
+            {["Home", "About", "Projects", "Experience", "Skills", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}

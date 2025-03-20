@@ -45,30 +45,42 @@ const Expertise = ({ icon, title }: { icon: React.ReactNode, title: string }) =>
 
 const Skills = () => {
   const productSkills = [
-    { name: "Product Strategy", level: 95 },
-    { name: "Roadmap Planning", level: 90 },
-    { name: "User Story Mapping", level: 92 },
-    { name: "Agile Methodologies", level: 88 },
-    { name: "Go-to-Market Strategy", level: 85 }
+    { name: "Product Strategy", level: 90 },
+    { name: "Wireframing/Prototyping", level: 95 },
+    { name: "Postman", level: 85 },
+    { name: "Primary & Secondary Research", level: 88 },
+    { name: "Brainstorming", level: 92 }
   ];
 
   const technicalSkills = [
     { name: "API Integration", level: 80 },
-    { name: "Data Analytics", level: 87 },
-    { name: "SQL", level: 75 },
-    { name: "Financial Modeling", level: 82 },
-    { name: "Compliance & Security", level: 85 }
+    { name: "KPI", level: 85 },
+    { name: "Figma", level: 90 },
+    { name: "JIRA / Confluence", level: 88 },
+    { name: "PRD", level: 92 }
   ];
 
-  const expertiseAreas = [
-    { icon: <BarChart size={24} />, title: "Financial Analysis" },
-    { icon: <LineChart size={24} />, title: "Market Trends" },
-    { icon: <Workflow size={24} />, title: "Process Optimization" },
-    { icon: <Zap size={24} />, title: "Fast Iteration" },
-    { icon: <Users size={24} />, title: "User Research" },
-    { icon: <Lightbulb size={24} />, title: "Innovation" },
-    { icon: <Target size={24} />, title: "KPI Definition" },
-    { icon: <BarChart2 size={24} />, title: "Growth Metrics" }
+  const methodologySkills = [
+    { name: "Agile & Scrum Methodologies", level: 90 },
+    { name: "GTM", level: 85 },
+    { name: "Data Analysis", level: 87 },
+    { name: "User Story Mapping", level: 93 },
+    { name: "User Journey/Roadmap", level: 89 }
+  ];
+
+  const keyAchievements = [
+    {
+      title: "Boosted retention",
+      description: "Reimagined the user onboarding journey and funnel analysis that boosted retention by 15% YoY."
+    },
+    {
+      title: "Reducing refund processing errors",
+      description: "Developed specifications for automated API integration of refund applications, with UI/UX integration uplifted easily, reducing refund processing time and improving operational efficiency."
+    },
+    {
+      title: "Educational",
+      description: "Helped at Business School | Leadership Role From Stanford | Technical Running Champion."
+    }
   ];
 
   return (
@@ -91,7 +103,7 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            My Expertise in Fintech
+            My Product Management Expertise
           </motion.h2>
           
           <motion.p
@@ -101,8 +113,8 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            A balanced combination of product management skills, financial knowledge, 
-            and technical capabilities that I bring to every project.
+            A balanced combination of product management skills, technical capabilities, 
+            and methodologies that I bring to every project.
           </motion.p>
         </div>
 
@@ -114,8 +126,9 @@ const Skills = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <SkillCategory title="Product Management" skills={productSkills} />
-            <SkillCategory title="Technical Knowledge" skills={technicalSkills} />
+            <SkillCategory title="Product Skills" skills={productSkills} />
+            <SkillCategory title="Technical Tools" skills={technicalSkills} />
+            <SkillCategory title="Methodologies" skills={methodologySkills} />
           </motion.div>
 
           <motion.div
@@ -125,26 +138,35 @@ const Skills = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-lg font-semibold mb-6 text-fintech-dark">Areas of Expertise</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {expertiseAreas.map((area, index) => (
-                <Expertise key={index} icon={area.icon} title={area.title} />
+            <h3 className="text-lg font-semibold mb-6 text-fintech-dark">Key Achievements</h3>
+            
+            <div className="space-y-6">
+              {keyAchievements.map((achievement, index) => (
+                <div key={index} className="flex gap-4 items-start border-b border-gray-100 last:border-b-0 pb-6 last:pb-0">
+                  <div className="w-10 h-10 rounded-full bg-fintech-blue/10 flex items-center justify-center flex-shrink-0 text-fintech-blue">
+                    <Zap size={20} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-fintech-dark mb-1">{achievement.title}</h4>
+                    <p className="text-sm text-fintech-gray">{achievement.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
             <div className="mt-8 pt-8 border-t border-gray-100">
-              <h3 className="text-lg font-semibold mb-4 text-fintech-dark">Industry Knowledge</h3>
+              <h3 className="text-lg font-semibold mb-4 text-fintech-dark">A/B Testing</h3>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Payments", "Digital Banking", "Investment Platforms", 
-                  "Blockchain", "RegTech", "InsurTech", "Lending", 
-                  "Personal Finance", "Open Banking", "Compliance"
-                ].map((industry, index) => (
+                  "A/B Testing", "Feature Flags", "PRD", 
+                  "Agile", "GTM", "API/UX Design", 
+                  "User Research", "UX Workflow", "Problem/Solution Fit"
+                ].map((skill, index) => (
                   <span 
                     key={index} 
                     className="px-3 py-1 bg-fintech-teal/10 text-fintech-blue rounded-full text-sm"
                   >
-                    {industry}
+                    {skill}
                   </span>
                 ))}
               </div>

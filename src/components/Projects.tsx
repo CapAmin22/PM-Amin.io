@@ -19,58 +19,58 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "FinFlow - Digital Banking Platform",
-      description: "Led the redesign of a legacy banking platform, transforming it into a modern, user-centric digital experience with enhanced features and improved accessibility.",
-      tags: ["UX Research", "Product Strategy", "API Integration", "Mobile Banking"],
+      title: "223Poultry - Agribusiness Platform",
+      description: "Founded and led strategic initiatives focused on Agribusiness Assistance, Training and Education, and creating sustainable networking opportunities for industry professionals.",
+      tags: ["Founder", "Agribusiness", "Sustainability", "Digital Collaboration"],
       icon: <Layers size={24} />,
       image: "bg-gradient-to-br from-blue-500 to-teal-400",
       results: [
-        "Increased mobile engagement by 47%",
-        "Reduced transaction abandonment by 32%",
-        "Implemented biometric authentication",
-        "Streamlined user onboarding process"
+        "Established training programs for sustainable practices",
+        "Created digital collaboration network for industry professionals",
+        "Developed information sharing platform for agribusiness news",
+        "Implemented strategic initiatives for business assistance"
       ]
     },
     {
       id: 2,
-      title: "PaySecure - Payment Processing System",
-      description: "Developed a comprehensive payment solution that simplified transactions while enhancing security measures, supporting multiple payment methods and international currencies.",
-      tags: ["Payment Processing", "Security", "International Markets", "Compliance"],
+      title: "Kotak Online - New Accounts Platform",
+      description: "Developed and monitored KPIs using analytics tools to optimize platforms and implemented strategies based on customer insights to enhance user engagement.",
+      tags: ["Analytics", "User Engagement", "Conversion Optimization", "Financial Services"],
       icon: <CreditCard size={24} />,
       image: "bg-gradient-to-br from-purple-500 to-indigo-500",
       results: [
-        "Processed over $2M in transactions within first quarter",
-        "Reduced payment failures by 28%",
-        "Achieved PCI DSS Level 1 compliance",
-        "Expanded to 12 international markets"
+        "Enhanced user engagement metrics",
+        "Improved conversion rates through funnel optimization",
+        "Implemented robust tracking with Google Analytics & Mixpanel",
+        "Developed data-driven optimization strategies"
       ]
     },
     {
       id: 3,
-      title: "WealthVision - Investment Analytics Dashboard",
-      description: "Created an intuitive investment analytics platform that provides real-time insights, portfolio management tools, and personalized investment recommendations.",
-      tags: ["Data Visualization", "Financial Analysis", "Personalization", "Real-time Data"],
+      title: "ThinkReduce - Information Repository",
+      description: "Created detailed IRP wireframes and prototypes ensuring rapid iteration and user-centric improvements, while developing systems to enhance profile matching, sorting, and prioritization.",
+      tags: ["Wireframing", "Prototyping", "User Research", "Document Management"],
       icon: <PieChart size={24} />,
       image: "bg-gradient-to-br from-emerald-500 to-blue-500",
       results: [
-        "Increased user retention by 38%",
-        "Improved portfolio performance by average of 12%",
-        "Decreased analysis time by 65%",
-        "Expanded premium tier subscriptions by 41%"
+        "Developed user-centric wireframes and prototypes using Figma",
+        "Created document management system for library resources",
+        "Implemented profile matching and sorting algorithms",
+        "Integrated feedback mechanisms for continuous improvement"
       ]
     },
     {
       id: 4,
-      title: "SecureID - Identity Verification System",
-      description: "Spearheaded the development of a secure, compliant identity verification system that balances robust security with frictionless user experience for financial applications.",
-      tags: ["KYC/AML", "Biometrics", "Regulatory Compliance", "Security"],
+      title: "Helpy Meta - API Integration",
+      description: "Developed and managed APIs for SaaS integration, implementing automated testing and third-party service integration to improve product efficiency and scalability.",
+      tags: ["API Development", "Integration", "Testing", "Scalability"],
       icon: <Shield size={24} />,
       image: "bg-gradient-to-br from-blue-600 to-indigo-600",
       results: [
-        "Reduced verification time by 74%",
-        "Decreased fraud attempts by 67%",
-        "Achieved 99.8% verification accuracy",
-        "Expanded integration with 15+ financial platforms"
+        "Streamlined business data flow with API integrations",
+        "Implemented automated API testing with Postman/Newman",
+        "Integrated third-party services including Razorpay and Q-Nexus",
+        "Enhanced developer efficiency and user experience"
       ]
     }
   ];
@@ -95,7 +95,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Fintech Solutions That Make an Impact
+            Product Solutions That Make an Impact
           </motion.h2>
           
           <motion.p
@@ -105,7 +105,7 @@ const Projects = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            A showcase of my work developing innovative financial technology products 
+            A showcase of my work developing innovative products and solutions 
             that solve real problems and deliver measurable results.
           </motion.p>
         </div>
@@ -190,7 +190,7 @@ const Projects = () => {
                     
                     <div className="flex justify-end">
                       <button className="flex items-center gap-2 text-fintech-blue hover:text-fintech-dark transition-colors">
-                        <span>View Case Study</span>
+                        <span>View Details</span>
                         <ExternalLink size={16} />
                       </button>
                     </div>
