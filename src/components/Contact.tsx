@@ -1,7 +1,7 @@
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Linkedin, Twitter, Github } from "lucide-react";
+import { supabase } from "../lib/supabase";
 
 const ContactInfo = ({ icon, title, content }: { icon: React.ReactNode, title: string, content: string }) => (
   <div className="flex items-start gap-4">
@@ -25,6 +25,7 @@ const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -33,13 +34,18 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const { error: supabaseError } = await supabase
+        .from('contact_messages')
+        .insert([formState]);
+
+      if (supabaseError) throw supabaseError;
+
       setIsSubmitted(true);
       setFormState({
         name: "",
@@ -52,7 +58,12 @@ const Contact = () => {
       setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);
-    }, 1500);
+    } catch (err) {
+      setError("Failed to send message. Please try again later.");
+      console.error("Error sending message:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -148,7 +159,7 @@ const Contact = () => {
           >
             <h3 className="text-2xl font-bold mb-6 text-fintech-dark">Send Me a Message</h3>
             
-            {isSubmitted ? (
+            {isSubmitted && (
               <motion.div 
                 className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-4 mb-6"
                 initial={{ opacity: 0, y: 10 }}
@@ -162,7 +173,23 @@ const Contact = () => {
                   <span>Thanks for your message! I'll get back to you soon.</span>
                 </div>
               </motion.div>
-            ) : null}
+            )}
+
+            {error && (
+              <motion.div 
+                className="bg-red-50 border border-red-200 text-red-800 rounded-lg p-4 mb-6"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"></path>
+                  </svg>
+                  <span>{error}</span>
+                </div>
+              </motion.div>
+            )}
             
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
