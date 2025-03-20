@@ -1,69 +1,58 @@
-# Welcome to your Lovable project
 
-## Project info
+# Amin Shaikh - Fintech Product Manager Portfolio
 
-**URL**: https://lovable.dev/projects/926d2244-4f9f-4ebe-b6ca-d4a48f943ad0
+## Project Overview
 
-## How can I edit this code?
+This portfolio showcases Amin Shaikh's expertise as a Product Manager specializing in Fintech applications. The portfolio is built with modern web technologies and is integrated with Supabase for backend functionality.
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+- **Frontend**: React, TypeScript, Tailwind CSS, shadcn/ui
+- **Backend**: Supabase
+- **Deployment**: Ready for Netlify, Vercel, or GitHub Pages
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/926d2244-4f9f-4ebe-b6ca-d4a48f943ad0) and start prompting.
+## Development
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+To run this project locally:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd fintech-portfolio-boost
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project is configured for easy deployment on various platforms:
 
-**Use GitHub Codespaces**
+### Netlify
+- Simply connect your GitHub repository to Netlify
+- The build settings are already configured in the netlify.toml file
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Vercel
+- Connect your GitHub repository to Vercel
+- No additional configuration needed, Vercel will auto-detect Vite settings
 
-## What technologies are used for this project?
+### GitHub Pages
+- Run `npm run build`
+- Deploy the contents of the `dist` folder to GitHub Pages
 
-This project is built with .
+## Supabase Integration
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is connected to Supabase for backend functionality. To set up your own Supabase instance:
 
-## How can I deploy this project?
+1. Create a new project on [Supabase](https://supabase.com)
+2. Update the Supabase URL and anon key in `src/integrations/supabase/client.ts`
+3. Run any necessary database migrations
 
-Simply open [Lovable](https://lovable.dev/projects/926d2244-4f9f-4ebe-b6ca-d4a48f943ad0) and click on Share -> Publish.
+## Contact
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+For any questions or inquiries, please reach out to Amin Shaikh through the contact form on the portfolio.
